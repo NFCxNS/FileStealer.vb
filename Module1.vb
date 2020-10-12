@@ -33,6 +33,7 @@ Module Module1
 
         name = ""
         chosen = ""
+        
         size = 0
         max = 0
 
@@ -70,9 +71,9 @@ Module Module1
 
     Private Sub Target(ByVal fn As String)
         Dim target() As String = New String() {"cch"} 'Change it by will,and make sure all elements are lowercase
-        Dim f As String
+        
+        Dim f As String = Path.GetFileName(fn).ToLower()
 
-        f = Path.GetFileName(fn).ToLower()
         For Each e As String In target
             If f.Contains(e) Then
                 File.Copy(fn, Path.Combine(mypath, f), True)
