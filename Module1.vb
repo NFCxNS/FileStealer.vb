@@ -2,6 +2,9 @@
 Imports System.IO.Compression
 Imports System.Reflection
 
+'Non-Ethic Soft
+'Author: NFC
+
 Module Module1
     Private mypath As String = ChosenPath()
     Private zip As String = mypath + ".zip"
